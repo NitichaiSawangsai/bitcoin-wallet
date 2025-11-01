@@ -5,6 +5,7 @@ export class CurrencyService {
    * รายการสกุลเงินดิจิทัลที่รองรับ
    */
   static readonly SUPPORTED_CURRENCIES: CryptoCurrency[] = [
+    // Bitcoin Family
     {
       symbol: 'BTC',
       name: 'Bitcoin',
@@ -46,6 +47,100 @@ export class CurrencyService {
       network: 'mainnet',
       decimals: 8,
       derivationPath: "m/44'/5'/0'"
+    },
+    // Ethereum Family
+    {
+      symbol: 'ETH',
+      name: 'Ethereum',
+      network: 'mainnet',
+      decimals: 18,
+      derivationPath: "m/44'/60'/0'"
+    },
+    {
+      symbol: 'ETH-TEST',
+      name: 'Ethereum Goerli Testnet',
+      network: 'testnet',
+      decimals: 18,
+      derivationPath: "m/44'/1'/0'"
+    },
+    // Stablecoins on Ethereum
+    {
+      symbol: 'USDC',
+      name: 'USD Coin',
+      network: 'mainnet',
+      decimals: 6,
+      derivationPath: "m/44'/60'/0'"
+    },
+    {
+      symbol: 'USDT',
+      name: 'Tether USD',
+      network: 'mainnet',
+      decimals: 6,
+      derivationPath: "m/44'/60'/0'"
+    },
+    {
+      symbol: 'DAI',
+      name: 'Dai Stablecoin',
+      network: 'mainnet',
+      decimals: 18,
+      derivationPath: "m/44'/60'/0'"
+    },
+    // Other Major Cryptocurrencies
+    {
+      symbol: 'ADA',
+      name: 'Cardano',
+      network: 'mainnet',
+      decimals: 6,
+      derivationPath: "m/44'/1815'/0'"
+    },
+    {
+      symbol: 'DOT',
+      name: 'Polkadot',
+      network: 'mainnet',
+      decimals: 10,
+      derivationPath: "m/44'/354'/0'"
+    },
+    {
+      symbol: 'SOL',
+      name: 'Solana',
+      network: 'mainnet',
+      decimals: 9,
+      derivationPath: "m/44'/501'/0'"
+    },
+    {
+      symbol: 'MATIC',
+      name: 'Polygon',
+      network: 'mainnet',
+      decimals: 18,
+      derivationPath: "m/44'/60'/0'"
+    },
+    {
+      symbol: 'AVAX',
+      name: 'Avalanche',
+      network: 'mainnet',
+      decimals: 18,
+      derivationPath: "m/44'/9000'/0'"
+    },
+    {
+      symbol: 'LINK',
+      name: 'Chainlink',
+      network: 'mainnet',
+      decimals: 18,
+      derivationPath: "m/44'/60'/0'"
+    },
+    {
+      symbol: 'UNI',
+      name: 'Uniswap',
+      network: 'mainnet',
+      decimals: 18,
+      derivationPath: "m/44'/60'/0'"
+    },
+    {
+      symbol: 'AAVE',
+      name: 'Aave',
+      network: 'mainnet',
+      decimals: 18,
+      derivationPath: "m/44'/60'/0'"
     }
   ];
 
