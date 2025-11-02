@@ -13,6 +13,7 @@ export class WalletAPIServer {
   private app: express.Application;
   private walletManager: WalletManager;
   private port: number;
+  private server?: any;
 
   constructor(port: number = 3000) {
     this.app = express();
@@ -634,16 +635,31 @@ export class WalletAPIServer {
   }
 
   /**
-   * เริ่ม server
+   * เริ่ม API server
    */
   public async start(): Promise<void> {
     return new Promise((resolve) => {
-      this.app.listen(this.port, () => {
+      this.server = this.app.listen(this.port, () => {
         console.log(`🚀 Bitcoin Wallet API Server running on port ${this.port}`);
         console.log(`📚 API Documentation: http://localhost:${this.port}/api-docs`);
         console.log(`🏥 Health Check: http://localhost:${this.port}/health`);
         resolve();
       });
+    });
+  }
+
+  /**
+   * หยุด API server
+   */
+  public async stop(): Promise<void> {
+    return new Promise((resolve) => {
+      if (this.server) {
+        this.server.close(() => {
+          resolve();
+        });
+      } else {
+        resolve();
+      }
     });
   }
 
